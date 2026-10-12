@@ -14,7 +14,7 @@ winget install -e --id OpenJS.NodeJS.LTS --accept-source-agreements --accept-pac
 **② Git Bash**를 새로 열고(시작 → `git bash`) 붙여 넣고 Enter — 게임을 설치하고 바탕화면에 「삽질코딩」 아이콘을 만들어요.
 
 ```bash
-npm install -g https://github.com/bjcho4141/sapjil-download/releases/latest/download/sapjil.tgz && sapjil init ~/sapjil-play
+npm install -g https://github.com/bjcho4141/sapjil-download/releases/latest/download/sapjil.tgz && node "$(npm root -g)/sapjil/dist/cli.js" init ~/sapjil-play
 ```
 
 > Git Bash에서는 `Ctrl+V` 대신 **마우스 오른쪽 클릭 → Paste** 또는 `Shift+Insert`로 붙여 넣어요.
@@ -33,7 +33,7 @@ Dock에 생긴 「삽질코딩」 아이콘을 누르면 시작해요.
 
 ## 업데이트
 
-②의 `npm install -g …` 부분만 다시 실행하면 최신 버전으로 바뀌어요. 게임 폴더(`~/sapjil-play`)와 진행 상황은 그대로예요.
+`&&` 앞의 `npm install -g …` 부분만 다시 실행하면 최신 버전으로 바뀌어요. 게임 폴더(`~/sapjil-play`)와 진행 상황은 그대로예요.
 
 ## 막히면
 
