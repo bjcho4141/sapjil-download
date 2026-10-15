@@ -47,27 +47,24 @@ npm install -g https://github.com/bjcho4141/sapjil-download/releases/latest/down
 
 ## 🍎 맥
 
-> 시간 약 10분.
+> 시간 약 5~10분. 명령어 **한 줄**이면 끝나요. Node.js · VS Code · 환경변수(PATH)까지 알아서 해요.
 
-### 1단계 — 준비물 2개 설치
-
-| 프로그램 | 설치 방법 |
-|---|---|
-| **Node.js** (22.12 이상) | [nodejs.org](https://nodejs.org/ko/download)에서 "LTS" 설치 파일을 받아 실행. Homebrew가 있으면 `brew install node` |
-| **VS Code** | [code.visualstudio.com](https://code.visualstudio.com)에서 받아 **응용 프로그램** 폴더로 옮기기 |
-
-### 2단계 — 터미널: 게임 설치
+### 1단계 — 터미널: 한 줄 붙여 넣기
 
 `⌘ + Space` → `터미널` 검색 → 열기 → 아래 줄을 붙여 넣고 Enter.
 
 ```bash
-npm install -g https://github.com/bjcho4141/sapjil-download/releases/latest/download/sapjil.tgz && node "$(npm root -g)/sapjil/dist/cli.js" init ~/sapjil-play
+curl -fsSL https://github.com/bjcho4141/sapjil-download/releases/latest/download/install.sh | bash
 ```
 
-- `EACCES`(권한) 오류가 나면 앞에 `sudo `를 붙여 `sudo npm install -g https://github.com/bjcho4141/sapjil-download/releases/latest/download/sapjil.tgz`를 먼저 하고(맥 비밀번호 입력), 그다음 `node "$(npm root -g)/sapjil/dist/cli.js" init ~/sapjil-play`.
+- 이미 있는 건 건너뛰고, 없는 것만 받아요. **비밀번호(sudo)는 안 물어봐요.**
+  - **Node.js** — 없거나 오래됐으면 게임용 Node를 내 폴더(`~/.sapjil-node`)에 받아요
+  - **VS Code** — 없으면 받아서 응용 프로그램 폴더에 넣어요
+  - **환경변수(PATH)** — 새 터미널에서도 `node`·`sapjil`이 되게 `~/.zprofile`에 한 줄 넣어요
 - 마지막에 노란 **🏗 공사 시작!**이 보이면 끝. Dock에 「삽질코딩」 아이콘이 생겨요.
+- **macOS 12(몬터레이) 이상**이 필요해요. 2017년 맥도 🍎 메뉴 → 소프트웨어 업데이트로 올리면 돼요.
 
-### 3단계 — 게임 시작
+### 2단계 — 게임 시작
 
 1. Dock의 **「삽질코딩」 아이콘** → 브라우저(게임 화면)와 **VS Code**가 같이 열려요. (처음에 "터미널을 제어하려고 합니다" 창이 뜨면 [허용])
 2. VS Code 위쪽에 **"제한 모드"** 줄이 보이면 **[관리] → [신뢰]** — **터미널을 열기 전에 먼저!**
@@ -94,20 +91,13 @@ npm install -g https://github.com/bjcho4141/sapjil-download/releases/latest/down
 
 ### 🍎 맥
 
-1. 게임 화면 오른쪽 위 **[⏻ 끄기]**
-2. **터미널**을 열고 아래 줄을 붙여 넣고 Enter (`changed … packages`가 나오면 끝)
+1. **터미널**을 열고 설치 때 그 한 줄을 **그대로** 붙여 넣고 Enter (게임이 켜져 있으면 알아서 끄고 업데이트해요)
 
 ```bash
-npm install -g https://github.com/bjcho4141/sapjil-download/releases/latest/download/sapjil.tgz
+curl -fsSL https://github.com/bjcho4141/sapjil-download/releases/latest/download/install.sh | bash
 ```
 
-   권한(`EACCES`) 오류가 나면 이걸로 (맥 비밀번호를 물어봐요):
-
-```bash
-sudo npm install -g https://github.com/bjcho4141/sapjil-download/releases/latest/download/sapjil.tgz
-```
-
-3. Dock의 **「삽질코딩」 아이콘**
+2. **✔ 업데이트 끝!**이 나오면 Dock의 **「삽질코딩」 아이콘**
 
 ---
 
@@ -115,7 +105,8 @@ sudo npm install -g https://github.com/bjcho4141/sapjil-download/releases/latest
 
 | 이런 게 보이면 | 이렇게 |
 |---|---|
-| `npm: command not found` | 프로그램 설치(1단계)가 끝났는지 보고, Git Bash/터미널을 **닫았다가 새로** 열어서 다시 |
+| `npm: command not found` | 윈도우: 1단계가 끝났는지 보고 Git Bash를 **닫았다가 새로** 열어서 다시 · 맥: 설치 한 줄을 다시 붙여 넣기 |
+| 맥 설치 줄에서 빨간 **✘** | 글씨에 적힌 대로 하고 같은 줄을 다시 붙여 넣기. 그래도 안 되면 화면을 캡처 |
 | `sapjil: command not found` | 게임 아이콘으로 한 번 켜면 고쳐져요. 그 뒤 Git Bash/터미널을 새로 열어요 |
 | VS Code 터미널이 `powershell`·`zsh` | 위쪽 "제한 모드" → [관리] → [신뢰] → 🗑으로 그 터미널 닫기 → `+` |
 | 아이콘을 눌러도 아무 일이 없어요 | Git Bash/터미널에서 `cd ~/sapjil-play && node "$(npm root -g)/sapjil/dist/cli.js" play` 를 입력하고 나오는 화면을 캡처 |
